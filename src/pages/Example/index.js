@@ -1,8 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
 import { Container, Title, Subtitle, User } from "./styles";
+import { Creators as TemplateActions } from "~/store/ducks/template";
 
-export default function Example() {
+function Example(props) {
   return (
     <Container>
       <Title>ReactJS Template</Title>
@@ -19,3 +22,12 @@ export default function Example() {
     </Container>
   );
 }
+
+const mapStateToProps = (state) => ({
+  template: state.templateReducer.template,
+});
+
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(TemplateActions, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Example);
