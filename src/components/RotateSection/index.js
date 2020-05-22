@@ -23,21 +23,45 @@ class RotateSection extends Component {
         <div className={classes.root}>
           <div className="flip-button">
             <button
+              style={{
+                width: 175,
+                borderRadius: "2px",
+                border: 0,
+                backgroundColor: "#3f51b5",
+                fontSize: 13,
+              }}
               className="btn btn-primary"
               onClick={() => this.props.toggleHorizontalFlip(this.props.horizontalFlip)}
             >
-              Horizontal Flip
+              Flip Horizontal
             </button>
+          </div>
+
+          <div className="flip-button">
             <button
+              style={{
+                width: 175,
+                borderRadius: "2px",
+                border: 0,
+                backgroundColor: "#3f51b5",
+                fontSize: 13,
+              }}
               className="btn btn-primary"
               onClick={() => this.props.toggleVerticalFlip(this.props.verticalFlip)}
             >
-              Vertical Flip
+              Flip Vertical
             </button>
           </div>
 
           <div className="rotation-buttons">
             <button
+              style={{
+                width: 84.5,
+                borderRadius: "2px",
+                border: 0,
+                backgroundColor: "#3f51b5",
+                fontSize: 13,
+              }}
               className="btn btn-primary"
               onClick={this.props.rotate90DegreeLeft}
             >
@@ -45,14 +69,21 @@ class RotateSection extends Component {
             </button>
 
             <button
+              style={{
+                width: 84.5,
+                borderRadius: "2px",
+                border: 0,
+                backgroundColor: "#3f51b5",
+                fontSize: 13,
+              }}
               className="btn btn-primary"
               onClick={this.props.rotate90DegreeRight}
             >
               <i className="fas fa-redo" />
             </button>
           </div>
-          <label htmlFor="" style={{ margin: "3px 0px", color: "#f1f1f1" }}>
-            Fine-Tune Rotation:
+          <label htmlFor="" style={{ margin: "4px 0px", color: "#f1f1f1" }}>
+            Rotação de ajuste fino:
           </label>
           <Slider
             className={classes.slider}

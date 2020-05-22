@@ -6,8 +6,8 @@ import "./header.css";
 class Header extends Component {
   onImageChange(event) {
     if (event.target.files && event.target.files[0]) {
-      let reader = new FileReader();
-      let file = event.target.files[0];
+      const reader = new FileReader();
+      const file = event.target.files[0];
       reader.fileName = file.name;
 
       reader.onloadend = (upload) => {
@@ -26,7 +26,7 @@ class Header extends Component {
             onClick={() => this.fileInput.click()}
             data-tip="Upload Image"
           >
-            <i className="fas fa-lg fa-file-upload" />
+            <i className="fal fa-lg fa-file-upload" />
           </div>
           <input
             type="file"
@@ -44,7 +44,7 @@ class Header extends Component {
                   borderRadius: "2px",
                   border: 0,
                   backgroundColor: "#3f51b5",
-                  fontSize: 13
+                  fontSize: 13,
                 }}
                 onClick={this.props.setDownloadImageFlag}
                 data-toggle="tooltip"
@@ -52,7 +52,7 @@ class Header extends Component {
                 title="Salvar imagem"
               >
                 Salvar imagem
-                <i className="fas fa-file-download fa-lg pl-2" />
+                <i className="fal fa-file-download fa-lg pl-2" />
               </button>
             ) : null}
           </div>
@@ -62,24 +62,20 @@ class Header extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    handleUploadedFile: (e) => {
-      dispatch({ type: "HANDLE_FILE_UPLOAD", payload: e });
-    },
-    setDownloadImageFlag: () => {
-      dispatch({ type: "SET_DOWNLOAD_IMAGE_FLAG" });
-    },
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  handleUploadedFile: (e) => {
+    dispatch({ type: "HANDLE_FILE_UPLOAD", payload: e });
+  },
+  setDownloadImageFlag: () => {
+    dispatch({ type: "SET_DOWNLOAD_IMAGE_FLAG" });
+  },
+});
 
-const mapPropsToState = (state) => {
-  return {
-    errorMessage: state.errorMessage,
-    image: state.image,
-    imageName: state.imageName,
-    imgURL: state.imgURL,
-  };
-};
+const mapPropsToState = (state) => ({
+  errorMessage: state.errorMessage,
+  image: state.image,
+  imageName: state.imageName,
+  imgURL: state.imgURL,
+});
 
 export default connect(mapPropsToState, mapDispatchToProps)(Header);

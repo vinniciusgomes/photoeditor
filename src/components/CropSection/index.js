@@ -19,12 +19,18 @@ class CropSection extends Component {
             </div>
 
             <div className="right-section">
-              <label for="">{this.props.cropDivWidth}</label>
+              <label htmlFor="">{this.props.cropDivWidth}</label>
 
-              <label for="">{this.props.cropDivHeight}</label>
+              <label htmlFor="">{this.props.cropDivHeight}</label>
             </div>
           </div>
           <button
+            style={{
+              borderRadius: "2px",
+              border: 0,
+              backgroundColor: "#3f51b5",
+              fontSize: 13,
+            }}
             className="btn btn-primary btn-block btn-crop-section"
             onClick={() => this.props.handleCropImage(this.props.cropImage)}
           >
@@ -32,29 +38,24 @@ class CropSection extends Component {
           </button>
         </div>
       );
-    } else {
-      return null;
     }
+    return null;
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    cropDivWidth: state.cropDivWidth,
-    cropDivHeight: state.cropDivHeight,
-    cropDivTop: state.cropDivTop,
-    cropDivLeft: state.cropDivLeft,
-    showCropCanvas: state.showCropCanvas,
-    cropImage: state.cropImage,
-  };
-};
+const mapStateToProps = (state) => ({
+  cropDivWidth: state.cropDivWidth,
+  cropDivHeight: state.cropDivHeight,
+  cropDivTop: state.cropDivTop,
+  cropDivLeft: state.cropDivLeft,
+  showCropCanvas: state.showCropCanvas,
+  cropImage: state.cropImage,
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    handleCropImage: (cropImage) => {
-      dispatch({ type: "CROP_IMAGE", payload: cropImage });
-    },
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  handleCropImage: (cropImage) => {
+    dispatch({ type: "CROP_IMAGE", payload: cropImage });
+  },
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(CropSection);

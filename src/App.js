@@ -35,38 +35,38 @@ class App extends Component {
 
   render() {
     if (this.props.image) {
-      return (
-        <div className="App">
-          <div className="wrapper">
-            <div className="header animate__animated animate__fadeInDown" style={{ flexDirection: "row" }}>
-              <Header />
+    return (
+      <div className="App">
+        <div className="wrapper">
+          <div className="header animate__animated animate__fadeInDown" style={{ flexDirection: "row" }}>
+            <Header />
+          </div>
+          <div className="middle-wrapper">
+            <div className="content animate__animated animate__fadeInLeft" ref={this.canvasDiv}>
+              <Canvas />
             </div>
-            <div className="middle-wrapper">
-              <div className="content animate__animated animate__fadeInLeft" ref={this.canvasDiv}>
-                <Canvas />
+            <div className="side-menu animate__animated animate__fadeInRight">
+              <div className="icons">
+                <Navbar />
               </div>
-              <div className="side-menu animate__animated animate__fadeInRight">
-                <div className="icons">
-                  <Navbar />
-                </div>
-                <div className="options">
-                  <BrightnessSlider />
-                  <ContrastSlider />
-                  <SaturateSlider />
-                  <BlurSlider />
-                  <ReturnDefaultButton />
-                  <ResizeSection />
-                  <RotateSection />
-                  <CropSection />
-                </div>
+              <div className="options">
+                <BrightnessSlider />
+                <ContrastSlider />
+                <SaturateSlider />
+                <BlurSlider />
+                <ReturnDefaultButton />
+                <ResizeSection />
+                <RotateSection />
+                <CropSection />
               </div>
-            </div>
-            <div className="footer animate__animated animate__fadeInUp">
-              <Footer showCropCanvas={this.props.showCropCanvas} />
             </div>
           </div>
+          <div className="footer animate__animated animate__fadeInUp">
+            <Footer showCropCanvas={this.props.showCropCanvas} />
+          </div>
         </div>
-      );
+      </div>
+    );
     }
     return (
       <div className="App">

@@ -10,10 +10,11 @@ class ReturnDefaultButton extends React.Component {
             <button
               className="btn btn-primary btn-block mt-5"
               style={{
+                width: 175,
                 borderRadius: "2px",
                 border: 0,
                 backgroundColor: "#3f51b5",
-                fontSize: 13
+                fontSize: 13,
               }}
               onClick={this.props.handleReturnDefaultButton}
             >

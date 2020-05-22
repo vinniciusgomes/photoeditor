@@ -43,7 +43,7 @@ class WelcomeScreen extends Component {
   }
 
   handleDroppedFiles(monitor) {
-    console.log("monitor.getItem().files: " + monitor.getItem().files);
+    console.log(`monitor.getItem().files: ${monitor.getItem().files}`);
     this.setState({ showSpinner: true }, () => {
       this.onImageChange({ target: { files: monitor.getItem().files } });
     });
@@ -51,8 +51,8 @@ class WelcomeScreen extends Component {
 
   onImageChange(event) {
     if (event.target.files && event.target.files[0]) {
-      let reader = new FileReader();
-      let file = event.target.files[0];
+      const reader = new FileReader();
+      const file = event.target.files[0];
       reader.fileName = file.name;
 
       reader.onloadend = (upload) => {
@@ -72,66 +72,65 @@ class WelcomeScreen extends Component {
     const { connectDropTarget, isOver } = this.props;
     if (this.state.loading) {
       return <Splash />;
-    } else {
-      return (
-        <div style={{ height: "100%" }} className="animate__animated animate__bounceIn">
-          <div className="wrapper">
-            <div className="lower-wrapper">
-              {connectDropTarget(
-                <div
-                  className="drag-drop-panel"
-                  onClick={(e) => this.fileInput.click()}
-                >
-                  {this.state.showSpinner ? (
-                    <Spinner animation="grow" variant="danger" />
-                  ) : isOver ? (
-                    <h2>Release to Upload!</h2>
-                  ) : (
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                      }}
-                    >
-                      <h3>Arraste e solte para fazer upload</h3>
-                      <span style={{ fontSize: 17 }}>Ou clique aqui</span>
-                    </div>
-                  )}
-                </div>
-              )}
-              <input
-                type="file"
-                style={{ display: "none" }}
-                onChange={(e) => this.onImageChange(e)}
-                ref={(fileInput) => (this.fileInput = fileInput)}
-              />
-            </div>
+    }
+    return (
+      <div
+        style={{ height: "100%" }}
+        className="animate__animated animate__bounceIn"
+      >
+        <div className="wrapper">
+          <div className="lower-wrapper">
+            {connectDropTarget(
+              <div
+                className="drag-drop-panel"
+                onClick={(e) => this.fileInput.click()}
+              >
+                {this.state.showSpinner ? (
+                  <Spinner animation="grow" variant="danger" />
+                ) : isOver ? (
+                  <h2>Release to Upload!</h2>
+                ) : (
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <i className="fal fa-image" style={{ fontSize: 75, marginBottom: 25 }} />
+                    <h3>Arraste e solte para fazer upload</h3>
+                    <span style={{ fontSize: 17 }}>ou clique aqui</span>
+                  </div>
+                )}
+              </div>,
+            )}
+            <input
+              type="file"
+              style={{ display: "none" }}
+              onChange={(e) => this.onImageChange(e)}
+              ref={(fileInput) => (this.fileInput = fileInput)}
+            />
           </div>
         </div>
-      );
-    }
+      </div>
+    );
   }
 }
 
-const mapDispachToProps = (dispatch) => {
-  return {
-    handleUploadedFile: (file) => {
-      dispatch({ type: "HANDLE_FILE_UPLOAD", payload: file });
-    },
-    setImage: (image, name) => {
-      dispatch({
-        type: "SET_IMAGE_FROM_WELCOME_SCREEN",
-        payload: { result: image, fileName: name },
-      });
-    },
-  };
-};
+const mapDispachToProps = (dispatch) => ({
+  handleUploadedFile: (file) => {
+    dispatch({ type: "HANDLE_FILE_UPLOAD", payload: file });
+  },
+  setImage: (image, name) => {
+    dispatch({
+      type: "SET_IMAGE_FROM_WELCOME_SCREEN",
+      payload: { result: image, fileName: name },
+    });
+  },
+});
 
-const mapStateToProps = (state) => {
-  return { image: state.image };
-};
+const mapStateToProps = (state) => ({ image: state.image });
 
 export default connect(
   mapStateToProps,
-  mapDispachToProps
+  mapDispachToProps,
 )(DropTarget(NativeTypes.FILE, nativeFileTarget, collect)(WelcomeScreen));

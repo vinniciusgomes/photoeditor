@@ -7,23 +7,19 @@ class InfoSectionFooter extends Component {
   render() {
     return (
       <div className="info-wrapper">
-        <label htmlFor="">Tamanho:</label>
-        {this.props.width + " x " + this.props.height}
+        <label htmlFor=""><i className="fal fa-image pr-2" /> Tamanho:</label>
+        {`${this.props.width} x ${this.props.height}`}
       </div>
     );
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {};
-};
+const mapDispatchToProps = (dispatch) => ({});
 
-const mapPropsToState = (state) => {
-  return {
-    width: state.width,
-    height: state.height,
-    imageName: state.imageName,
-  };
-};
+const mapPropsToState = (state) => ({
+  width: state.width,
+  height: state.height,
+  imageName: state.imageName,
+});
 
 export default connect(mapPropsToState, mapDispatchToProps)(InfoSectionFooter);

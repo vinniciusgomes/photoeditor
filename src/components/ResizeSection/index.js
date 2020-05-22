@@ -24,6 +24,7 @@ class ResizeSection extends Component {
   handleWidthChange = (e) => {
     this.setState({ width: e.target.value });
   };
+
   handleHeighthChange = (e) => {
     this.setState({ height: e.target.value });
   };
@@ -35,15 +36,16 @@ class ResizeSection extends Component {
           <div className="resize-section">
             <div className="left-section">
               <label className="label label-resize" htmlFor="resize-width">
-                Width:
+                Largura:
               </label>
               <label className="label label-resize" htmlFor="resize-height">
-                Heigth:
+                Altura:
               </label>
             </div>
 
             <div className="right-section">
               <input
+                style={{ width: 75 }}
                 type="text"
                 className="form-control"
                 aria-label="Small"
@@ -52,6 +54,7 @@ class ResizeSection extends Component {
                 onChange={this.handleWidthChange}
               />
               <input
+                style={{ width: 75 }}
                 type="text"
                 className="form-control"
                 aria-label="Small"
@@ -63,39 +66,42 @@ class ResizeSection extends Component {
           </div>
           <button
             className="btn btn-primary btn-resize-section"
+            style={{
+              width: 175,
+              borderRadius: "2px",
+              border: 0,
+              backgroundColor: "#3f51b5",
+              fontSize: 13,
+              marginTop: 20,
+            }}
             onClick={() =>
               this.props.submitResizeValues(this.state.width, this.state.height)
             }
           >
-            Apply
+            Aplicar
           </button>
         </div>
       );
-    } else {
-      return null;
     }
+    return null;
   }
 }
 
-const mapDispachToProps = (dispatch) => {
-  return {
-    submitResizeValues: (resizedWidth, resizedHeight) => {
-      dispatch({
-        type: "SET_WIDTH_AND_HEIGHT",
-        payload: { width: resizedWidth, height: resizedHeight },
-      });
-    },
-  };
-};
+const mapDispachToProps = (dispatch) => ({
+  submitResizeValues: (resizedWidth, resizedHeight) => {
+    dispatch({
+      type: "SET_WIDTH_AND_HEIGHT",
+      payload: { width: resizedWidth, height: resizedHeight },
+    });
+  },
+});
 
-const mapStateToProps = (state) => {
-  return {
-    resizedWidth: state.resizeWidth,
-    resizedHeight: state.resizeHeight,
-    currentWidth: state.width,
-    currentHeight: state.height,
-    showResizeSection: state.showResizeSection,
-  };
-};
+const mapStateToProps = (state) => ({
+  resizedWidth: state.resizeWidth,
+  resizedHeight: state.resizeHeight,
+  currentWidth: state.width,
+  currentHeight: state.height,
+  showResizeSection: state.showResizeSection,
+});
 
 export default connect(mapStateToProps, mapDispachToProps)(ResizeSection);

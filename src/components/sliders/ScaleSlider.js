@@ -20,7 +20,7 @@ class ScaleSlider extends Component {
     return (
       <div className={classes.root}>
         <div className="scale-slider-wrapper">
-          <label htmlFor="">Zoom: {this.props.scaleValue + "%"} </label>
+          <label style={{ width: 250 }} htmlFor=""><i className="fal fa-search pr-2" /> Zoom: {`${this.props.scaleValue}%`}</label>
           <Slider
             className={classes.slider}
             value={this.props.scaleValue}
@@ -35,24 +35,20 @@ class ScaleSlider extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    scaleValue: state.scaleValue,
-  };
-};
+const mapStateToProps = (state) => ({
+  scaleValue: state.scaleValue,
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    handleScaleChange: (event, value) => {
-      dispatch({
-        type: "HANDLE_SCALE_CHANGE",
-        payload: value,
-      });
-    },
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  handleScaleChange: (event, value) => {
+    dispatch({
+      type: "HANDLE_SCALE_CHANGE",
+      payload: value,
+    });
+  },
+});
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(withStyles(styles)(ScaleSlider));
