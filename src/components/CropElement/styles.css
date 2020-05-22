@@ -1,0 +1,5 @@
+.crop-div {
+  border: 3px solid white;
+  z-index: 100;
+  position: absolute;
+}

@@ -1,0 +1,143 @@
+.wrapper {
+  height: 100%;
+  background-color: #191919;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.upper-wrapper {
+  background-color: #191919;
+  height: 50%;
+  width: 75%;
+  display: flex;
+  align-items: center;
+}
+
+.upper-wrapper .panel-left {
+  width: 25%;
+  height: 60%;
+  margin: 20px;
+  display: flex;
+}
+
+.upper-wrapper .panel-left .content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  color: #f1f1f1;
+  font-size: 18px;
+  background-color: #ffffff;
+  border-radius: 30px;
+}
+.upper-wrapper .panel-left .content .contentHeader {
+  font-size: 21px;
+  margin-bottom: 7px;
+}
+.upper-wrapper .panel-left .content .content-image-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.upper-wrapper .panel-right {
+  min-width: 70%;
+  height: 90%;
+  min-height: 250px;
+  max-height: 300px;
+  border-radius: 30px;
+  background-color: #333333;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.panel-right .header-for-right-panel {
+  color: #f1f1f1;
+  margin: 5px 25px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.panel-right .row-flex-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.panel-right .image-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-right .image-box {
+  background-color: #404040;
+  height: 200px;
+  margin: 10px 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.panel-right .image-box:hover {
+  cursor: pointer;
+}
+
+.image-box .fas {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  color: white;
+  font-size: 13px;
+
+  display: inline-block;
+  border-radius: 100px;
+  box-shadow: 0px 0px 10px black;
+  background-color: black;
+  padding: 0.3em 0.4em;
+}
+
+.panel-right .image-desc {
+  max-height: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: -10px;
+  font-size: 16px;
+  color: #f1f1f1;
+  text-align: center;
+}
+
+.lower-wrapper {
+  display: flex;
+  height: 45%;
+  width: 55%;
+  min-height: 250px;
+  margin: auto;
+  z-index: 9;
+}
+
+.lower-wrapper .drag-drop-panel {
+  background-color:transparent;
+  color: #ffffff;
+  text-align: center;
+  min-width: 100%;
+  min-height: 100%;
+  border: 2px dashed #707070;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
