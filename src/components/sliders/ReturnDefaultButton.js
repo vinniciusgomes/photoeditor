@@ -13,7 +13,7 @@ class ReturnDefaultButton extends React.Component {
                 width: 175,
                 borderRadius: "2px",
                 border: 0,
-                backgroundColor: "#3f51b5",
+                backgroundColor: "#d42f2f",
                 fontSize: 13,
               }}
               onClick={this.props.handleReturnDefaultButton}

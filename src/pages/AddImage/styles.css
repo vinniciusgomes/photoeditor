@@ -1,6 +1,6 @@
 .wrapper {
   height: 100%;
-  background-color: #191919;
+  background-color: #25252d;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,7 +8,7 @@
 }
 
 .upper-wrapper {
-  background-color: #191919;
+  background-color: #32323c;
   height: 50%;
   width: 75%;
   display: flex;
@@ -120,6 +120,8 @@
 
 .lower-wrapper {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 45%;
   width: 55%;
   min-height: 250px;
@@ -128,13 +130,13 @@
 }
 
 .lower-wrapper .drag-drop-panel {
-  background-color:transparent;
+  background-color: #32323c;
   color: #ffffff;
   text-align: center;
   min-width: 100%;
   min-height: 100%;
   border: 2px dashed #707070;
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   border-radius: 10px;
   display: flex;
   justify-content: center;

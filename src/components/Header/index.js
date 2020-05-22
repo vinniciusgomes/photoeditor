@@ -21,12 +21,21 @@ class Header extends Component {
     return (
       <div className="header-container">
         <div className="left-side">
+          <div className="h-100 d-flex align-items-center justify-content-center">
+            <img
+              src="./static/img/icon.png"
+              style={{ height: 30, marginTop: 6, marginRight: 20 }}
+            />
+          </div>
+
           <div
             className="header-icons"
             onClick={() => this.fileInput.click()}
             data-tip="Upload Image"
+            style={{ cursor: "pointer", fontSize: 12 }}
           >
-            <i className="fal fa-lg fa-file-upload" />
+            <i className="fal fa-lg fa-file-upload pr-2" style={{fontSize: 20, marginTop: 3}} />
+            Nova imagem
           </div>
           <input
             type="file"
@@ -43,7 +52,7 @@ class Header extends Component {
                 style={{
                   borderRadius: "2px",
                   border: 0,
-                  backgroundColor: "#3f51b5",
+                  backgroundColor: "#d42f2f",
                   fontSize: 13,
                 }}
                 onClick={this.props.setDownloadImageFlag}

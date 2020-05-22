@@ -23,7 +23,7 @@ class SaturateSlider extends React.Component {
         {this.props.showSlider ? (
           <div className={classes.root}>
             <Typography id="label" style={{ color: "white" }}>
-              Saturation: {Math.floor(this.props.value)}
+              Saturação: {Math.floor(this.props.value)}
             </Typography>
             <Slider
               classes={{ container: classes.slider }}

@@ -28,7 +28,7 @@ class CropSection extends Component {
             style={{
               borderRadius: "2px",
               border: 0,
-              backgroundColor: "#3f51b5",
+              backgroundColor: "#d42f2f",
               fontSize: 13,
             }}
             className="btn btn-primary btn-block btn-crop-section"

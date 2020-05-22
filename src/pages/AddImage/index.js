@@ -80,6 +80,7 @@ class WelcomeScreen extends Component {
       >
         <div className="wrapper">
           <div className="lower-wrapper">
+            <img src="./static/img/logo-white.png" style={{marginTop: -100, marginBottom: 50, width: 350}} />
             {connectDropTarget(
               <div
                 className="drag-drop-panel"
@@ -96,12 +97,15 @@ class WelcomeScreen extends Component {
                       flexDirection: "column",
                     }}
                   >
-                    <i className="fal fa-image" style={{ fontSize: 75, marginBottom: 25 }} />
+                    <i
+                      className="fal fa-image"
+                      style={{ fontSize: 75, marginBottom: 25 }}
+                    />
                     <h3>Arraste e solte para fazer upload</h3>
                     <span style={{ fontSize: 17 }}>ou clique aqui</span>
                   </div>
                 )}
-              </div>,
+              </div>
             )}
             <input
               type="file"
@@ -132,5 +136,5 @@ const mapStateToProps = (state) => ({ image: state.image });
 
 export default connect(
   mapStateToProps,
-  mapDispachToProps,
+  mapDispachToProps
 )(DropTarget(NativeTypes.FILE, nativeFileTarget, collect)(WelcomeScreen));

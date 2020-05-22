@@ -5,7 +5,7 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  background-color: #191919;
+  background-color: #25252d;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -18,12 +18,12 @@ body {
 .App {
   width: 100%;
   height: 100%;
-  background-color: #191919;
+  background-color: #25252d;
 }
 
 .wrapper {
   height: 100%;
-  background-color: #191919;
+  background-color: #25252d;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,8 +31,8 @@ body {
 }
 
 .header {
-  background-color: #262626;
-  color: #3f51b5;
+  background-color: #1a1a20;
+  color: #d42f2f;
   min-height: 60px;
   width: 100%;
   margin-bottom: auto;
@@ -40,10 +40,11 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 999;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .footer {
-  background-color: #262626;
+  background-color: #1a1a20;
   color: #fff;
   height: 69px;
   width: 100%;
@@ -51,12 +52,13 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 999;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .side-menu {
   height: 100%;
   min-width: 300px;
-  color: #3f51b5;
+  color: #d42f2f;
   margin-right: auto;
   display: flex;
   flex-direction: row;
@@ -65,17 +67,18 @@ body {
 }
 
 .side-menu .icons {
-  background-color: #262626;
+  background-color: #1a1a20;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-width: 75px;
   margin-right: auto;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .side-menu .options {
-  background-color: #191919;
+  background-color: #1a1a20;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -83,10 +86,11 @@ body {
   min-width: 225px;
   margin-right: auto;
   z-index: 99;
+  border-left: solid 1px #3a3a3e;
 }
 
 .content {
-  background-color: #191919;
+  background-color: #25252d;
   height: 100%;
   width: 100%;
   margin-right: auto;
@@ -100,4 +104,8 @@ body {
   height: 100%;
   width: 100%;
   display: flex;
+}
+
+.MuiSlider-root {
+  color: #d42f2f !important;
 }
