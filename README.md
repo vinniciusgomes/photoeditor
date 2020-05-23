@@ -70,7 +70,7 @@ Bibliotecas:
 
 ## 💻 Projeto
 
-Esse projeto surgiu durante um trabalho acadêmico de Processamento Digital de Imagem. A ideia é construir um editor de fotos Web. Foi escolhido o ReactJS para o desenvolvimento do front-end por questão de mais conhecimento com a lib.
+Esse projeto surgiu durante um trabalho acadêmico de Processamento Digital de Imagem. A ideia é construir um editor de fotos Web. Foi escolhido o ReactJS para o desenvolvimento do front-end por questão de mais conhecimento da lib.
 
 ## :memo: Licença
 
