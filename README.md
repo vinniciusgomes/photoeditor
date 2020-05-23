@@ -72,7 +72,7 @@ Bibliotecas:
 
 Esse projeto surgiu durante um trabalho acadêmico de Processamento Digital de Imagem. A ideia é construir um editor de fotos Web. Foi escolhido o ReactJS para o desenvolvimento do front-end por questão de mais conhecimento da lib.
 
-Ver projeto: https://vinniciusgomes/photoeditor
+Ver projeto: https://vinniciusgomes.dev/photoeditor
 
 ## :memo: Licença
 
