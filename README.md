@@ -35,6 +35,19 @@
   <img alt="Frontend" src=".github/mockup.png" width="100%">
 </p>
 
+<p align="center">
+  <img alt="Frontend" src=".github/1.png" width="100%">
+</p>
+
+<p align="center">
+  <img alt="Frontend" src=".github/2.png" width="100%">
+</p>
+
+<p align="center">
+  <img alt="Frontend" src=".github/3.png" width="100%">
+</p>
+
+
 
 ## :rocket: Tecnologias
 
