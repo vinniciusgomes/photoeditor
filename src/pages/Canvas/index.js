@@ -6,7 +6,7 @@ import "./styles.css";
 import CropElement from "../../components/CropElement";
 
 const canvasTarget = {
-  drop(props, monitor, component) {
+  drop(monitor, component) {
     component.updateStateOnDrop(monitor);
   },
 };
@@ -103,34 +103,28 @@ class Canvas extends Component {
     const node = this.canvasRef.current;
     const context = node.getContext("2d");
 
-    // HORIZONTAL FLIP
     if (this.props.horizontalFlip) {
       context.translate(this.props.width, 0);
       context.scale(-1, 1);
       this.props.toggleHorizontalFlip(this.props.horizontalFlip);
     }
 
-    // VERTICAL FLIP
     if (this.props.verticalFlip) {
       context.translate(0, this.props.height);
       context.scale(1, -1);
       this.props.toggleVerticalFlip(this.props.verticalFlip);
     }
 
-    // ROTATE IMAGE
     if (this.props.showRotateSection) {
       context.fillRect(0, 0, this.props.width, this.props.height);
       context.fillStyle = "#000000";
 
-      // Move registration point to the center of the canvas
       context.translate(this.props.width / 2, this.props.height / 2);
 
       context.rotate((this.props.rotateCanvas * Math.PI) / 180);
 
-      // // Rotate 1 degree
       context.rotate((this.props.fineTuneRotate * Math.PI) / 180);
 
-      // Move registration point back to the top left corner of canvas
       context.translate(-this.props.width / 2, -this.props.height / 2);
       this.props.resetRotate();
     }
@@ -178,16 +172,6 @@ class Canvas extends Component {
     }
 
     context.drawImage(img, 0, 0, this.props.width, this.props.height);
-
-    // TEXT
-    context.font = "bold " + this.props.textSize + "px Arial";
-    context.fillStyle = this.props.inputColor;
-    context.textAlign = "center";
-    context.fillText(
-      this.props.textInput,
-      this.props.width / 2,
-      this.props.height / 2
-    );
 
     if (this.props.downloadImageFlag) {
       let imgURL = node.toDataURL("image/png");
