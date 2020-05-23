@@ -17,15 +17,26 @@ export default function Footer(props) {
       </div>
 
       <div className="right-panel mt-2">
+        <div className="mr-3">
+          <GitHubButton
+            href="https://github.com/vinniciusgomes"
+            target="_blank"
+            data-color-scheme="no-preference: dark; light: dark; dark: dark;"
+            data-size="large"
+            aria-label="Follow @vinniciusgomes on GitHub"
+          >
+            Follow @vinniciusgomes
+          </GitHubButton>
+        </div>
+
         <GitHubButton
-          href="https://github.com/vinniciusgomes"
+          data-text="See project on GitHub"
+          href="https://github.com/vinniciusgomes/photoeditor"
           target="_blank"
           data-color-scheme="no-preference: dark; light: dark; dark: dark;"
           data-size="large"
-          aria-label="Follow @vinniciusgomes on GitHub"
-        >
-          Follow @vinniciusgomes
-        </GitHubButton>
+          aria-label="See on GitHub"
+        />
       </div>
     </div>
   );
