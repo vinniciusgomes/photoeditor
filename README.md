@@ -31,22 +31,20 @@
 
 <br>
 
-<div class="row">
-  <div align="center">
-    <img alt="Frontend" src=".github/mockup.png" width="100%">
-  </div>
+<div align="center">
+  <img alt="Frontend" src=".github/mockup.png" width="100%">
+</div>
 
-  <div align="center">
-    <img alt="Frontend" src=".github/1.png" width="33.33%">
-  </div>
+<div align="center">
+  <img alt="Frontend" src=".github/1.png" width="100%">
+</div>
 
-  <div align="center">
-    <img alt="Frontend" src=".github/2.png" width="33.33%">
-  </div>
+<div align="center">
+  <img alt="Frontend" src=".github/2.png" width="100%">
+</div>
 
-  <div align="center">
-    <img alt="Frontend" src=".github/3.png" width="33.33%">
-  </div>
+<div align="center">
+  <img alt="Frontend" src=".github/3.png" width="100%">
 <div>
 
 
