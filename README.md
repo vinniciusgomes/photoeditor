@@ -1,10 +1,11 @@
 <h1 align="center">
-    <img alt="Vinnicius Gomes" src=".github/logo.png" width="200px" />
+    <img alt="photoeditor" title="PhotoEditor" src=".github/logo.png" width="150px" />
 </h1>
 
 <h4 align="center">
-  🚀 React Photo Editor
+ React Photo Editor 📷
 </h4>
+
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/vinniciusgomes/photoeditor">
 
@@ -21,7 +22,6 @@
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
 
-
 <p align="center">
   <a href="#rocket-Technology">Technology</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-Project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -31,47 +31,43 @@
 
 <br>
 
-<div align="center">
+<p align="center">
   <img alt="Frontend" src=".github/mockup.png" width="100%">
-</div>
-
-<div align="center">
+</p>
+<p align="center">
   <img alt="Frontend" src=".github/1.png" width="100%">
-</div>
-
-<div align="center">
+</p>
+<p align="center">
   <img alt="Frontend" src=".github/2.png" width="100%">
-</div>
-
-<div align="center">
+</p>
+<p align="center">
   <img alt="Frontend" src=".github/3.png" width="100%">
-<div>
+</p>
 
 ## :rocket: Technology
 
 This project was developed with the following technologies:
-
 
 - [Node.js](https://nodejs.org/en/)
 - [ReactJS](https://reactjs.org)
 
 Libs:
 
-  - [EditorConfig](https://editorconfig.org/)
-  - [ESLint](https://eslint.org/)
-  - [Prettier](https://prettier.io/)
-  - [Lottie](https://airbnb.design/lottie/)
-  - [Redux](https://redux.js.org/)
-  - [Redux](https://redux.js.org/)
-  - [React DnD](https://react-dnd.github.io/react-dnd/)
-  - [Material UI](https://material-ui.com/)
+- [EditorConfig](https://editorconfig.org/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Lottie](https://airbnb.design/lottie/)
+- [Redux](https://redux.js.org/)
+- [Redux](https://redux.js.org/)
+- [React DnD](https://react-dnd.github.io/react-dnd/)
+- [Material UI](https://material-ui.com/)
 
 
 ## 💻 Project
 
 This project came about during an academic work on Digital Image Processing. One idea is to build a photo editor on the Web. ReactJS was chosen for the development of the front end for reasons of greater knowledge of lib.
 
-Ver projeto: https://vinniciusgomes.dev/photoeditor
+See project: https://vinniciusgomes.dev
 
 
 ## 🤔 How to contribute
@@ -83,7 +79,6 @@ Ver projeto: https://vinniciusgomes.dev/photoeditor
 
 After the merge of your pull request is done, you can delete your branch.
 
-
 ## :memo: License
 
 This project is under the MIT license. See the file [LICENSE](LICENSE.md) for more details.
@@ -91,4 +86,3 @@ This project is under the MIT license. See the file [LICENSE](LICENSE.md) for mo
 ---
 
 Made with ♥ by Vinnicius Gomes
-
