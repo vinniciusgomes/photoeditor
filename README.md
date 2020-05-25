@@ -23,10 +23,10 @@
 
 
 <p align="center">
-  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
+  <a href="#rocket-Technology">Technology</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-Project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-How-to-contribute">How to contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-License">License</a>
 </p>
 
 <br>
@@ -47,15 +47,15 @@
   <img alt="Frontend" src=".github/3.png" width="100%">
 <div>
 
+## :rocket: Technology
 
-## :rocket: Tecnologias
+This project was developed with the following technologies:
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [Node.js](https://nodejs.org/en/)
 - [ReactJS](https://reactjs.org)
 
-Bibliotecas:
+Libs:
 
   - [EditorConfig](https://editorconfig.org/)
   - [ESLint](https://eslint.org/)
@@ -67,16 +67,28 @@ Bibliotecas:
   - [Material UI](https://material-ui.com/)
 
 
-## 💻 Projeto
+## 💻 Project
 
-Esse projeto surgiu durante um trabalho acadêmico de Processamento Digital de Imagem. A ideia é construir um editor de fotos Web. Foi escolhido o ReactJS para o desenvolvimento do front-end por questão de mais conhecimento da lib.
+This project came about during an academic work on Digital Image Processing. One idea is to build a photo editor on the Web. ReactJS was chosen for the development of the front end for reasons of greater knowledge of lib.
 
 Ver projeto: https://vinniciusgomes.dev/photoeditor
 
-## :memo: Licença
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+## 🤔 How to contribute
+
+- Fork this repository;
+- Create a branch with your feature: `git checkout -b my-feature`;
+- Commit your changes: `git commit -m 'feat: My new feature'`;
+- Push to your branch: `git push origin my-feature`.
+
+After the merge of your pull request is done, you can delete your branch.
+
+
+## :memo: License
+
+This project is under the MIT license. See the file [LICENSE](LICENSE.md) for more details.
 
 ---
 
-Feito com ♥ by Vinnicius Gomes
+Made with ♥ by Vinnicius Gomes
+
