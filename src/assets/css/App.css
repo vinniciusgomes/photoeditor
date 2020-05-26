@@ -40,7 +40,7 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 999;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .footer {
@@ -52,7 +52,7 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 999;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .side-menu {
@@ -74,7 +74,7 @@ body {
   align-items: center;
   min-width: 75px;
   margin-right: auto;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .side-menu .options {
@@ -108,4 +108,35 @@ body {
 
 .MuiSlider-root {
   color: #d42f2f !important;
+}
+
+.desktop {
+  height: 100vh;
+  width: 100%;
+}
+
+.mobile {
+  height: 100vh;
+  width: 100%;
+  display: none;
+  cursor: default
+}
+
+.no-responsive-text {
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 500;
+}
+
+@media (max-width: 1100px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

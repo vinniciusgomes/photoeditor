@@ -17,7 +17,6 @@ import ResizeSection from "./components/ResizeSection";
 import RotateSection from "./components/RotateSection";
 import Footer from "./components/Footer";
 import CropSection from "./components/CropSection";
-
 import AddImageScreen from "./pages/AddImage";
 
 class App extends Component {
@@ -29,48 +28,57 @@ class App extends Component {
   componentDidUpdate() {
     this.props.setWidthAndHeightOfCanvasDiv(
       this.canvasDiv.current.clientWidth,
-      this.canvasDiv.current.clientHeight,
+      this.canvasDiv.current.clientHeight
     );
   }
 
   render() {
-    if (this.props.image) {
     return (
       <div className="App">
-        <div className="wrapper">
-          <div className="header animate__animated animate__fadeInDown" style={{ flexDirection: "row" }}>
-            <Header />
-          </div>
-          <div className="middle-wrapper">
-            <div className="content animate__animated animate__fadeInLeft" ref={this.canvasDiv}>
-              <Canvas />
-            </div>
-            <div className="side-menu animate__animated animate__fadeInRight">
-              <div className="icons">
-                <Navbar />
+        <div className="desktop">
+          {this.props.image ? (
+            <div className="wrapper">
+              <div
+                className="header animate__animated animate__fadeInDown"
+                style={{ flexDirection: "row" }}
+              >
+                <Header />
               </div>
-              <div className="options">
-                <BrightnessSlider />
-                <ContrastSlider />
-                <SaturateSlider />
-                <BlurSlider />
-                <ReturnDefaultButton />
-                <ResizeSection />
-                <RotateSection />
-                <CropSection />
+              <div className="middle-wrapper">
+                <div
+                  className="content animate__animated animate__fadeInLeft"
+                  ref={this.canvasDiv}
+                >
+                  <Canvas />
+                </div>
+                <div className="side-menu animate__animated animate__fadeInRight">
+                  <div className="icons">
+                    <Navbar />
+                  </div>
+                  <div className="options">
+                    <BrightnessSlider />
+                    <ContrastSlider />
+                    <SaturateSlider />
+                    <BlurSlider />
+                    <ReturnDefaultButton />
+                    <ResizeSection />
+                    <RotateSection />
+                    <CropSection />
+                  </div>
+                </div>
+              </div>
+              <div className="footer animate__animated animate__fadeInUp">
+                <Footer showCropCanvas={this.props.showCropCanvas} />
               </div>
             </div>
-          </div>
-          <div className="footer animate__animated animate__fadeInUp">
-            <Footer showCropCanvas={this.props.showCropCanvas} />
-          </div>
+          ) : (
+            <AddImageScreen />
+          )}
         </div>
-      </div>
-    );
-    }
-    return (
-      <div className="App">
-        <AddImageScreen />
+        <div className="mobile">
+          <h1 className="no-responsive-text">A versão mobile está em desenvolvimento</h1>
+          <span className="no-responsive-text" style={{fontWeight: 300, fontSize: 16, filter: "brightness(60%)"}}>Resolução mínima é 1100px</span>
+        </div>
       </div>
     );
   }
@@ -92,5 +100,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
   mapStateToProps,
-  mapDispachToProps,
+  mapDispachToProps
 )(DragDropContext(HTML5Backend)(App));
