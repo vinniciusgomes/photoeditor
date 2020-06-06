@@ -4,6 +4,7 @@ import { DropTarget } from "react-dnd";
 
 import "./styles.css";
 import CropElement from "../../components/CropElement";
+import api from "~/services/api";
 
 const canvasTarget = {
   drop(monitor, component) {
@@ -173,10 +174,37 @@ class Canvas extends Component {
 
     context.drawImage(img, 0, 0, this.props.width, this.props.height);
 
-    if (this.props.downloadImageFlag) {
+    if (this.props.saveToCloudImageFlag) {
+      let imgURL = node.toDataURL("image/png");
+
+      // a string (dataURL) (simplificado sem verificação)
+      let avatar = imgURL.split(",")[1];
+      // armazenar como referência os dois últimos caracteres da string (para checar o padding)
+      let pad = avatar.slice(-2);
+      // definir o número de bytes para extrair (baseado no padding)
+      let padlen = pad === "==" ? 2 : pad.slice(-1) === "=" ? 1 : null;
+      // calcular segundo a fórmula
+      let size = (avatar.length / 4) * 3 - padlen;
+      console.log(bytesToSize(size));
+      // this.props.setImgURL(imgURL);
+      api
+        .post("/image", { imageURL: imgURL })
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((err) => alert(err));
+    } else if (this.props.downloadImageFlag) {
       let imgURL = node.toDataURL("image/png");
       this.props.setImgURL(imgURL);
       this.props.downloadImage(imgURL);
+    }
+
+    function bytesToSize(bytes) {
+      const sizes = ["Bytes", "KB", "MB", "GB", "TB"];
+      if (bytes === 0) return "n/a";
+      const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)), 10);
+      if (i === 0) return `${bytes} ${sizes[i]})`;
+      return `${(bytes / 1024 ** i).toFixed(1)} ${sizes[i]}`;
     }
   }
 
@@ -272,6 +300,7 @@ const mapStateToProps = (state) => {
     inputColor: state.inputColor,
     textSize: state.textSize,
     downloadImageFlag: state.downloadImageFlag,
+    saveToCloudImageFlag: state.saveToCloudImageFlag,
     scaleValue: state.scaleValue,
     horizontalFlip: state.horizontalFlip,
     verticalFlip: state.verticalFlip,

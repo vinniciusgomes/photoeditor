@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 import api from "../../services/api";
 import {
@@ -13,10 +13,12 @@ import {
   TextfieldContainer,
   Button,
   Form,
+  SignUpButton,
 } from "./styles";
 
 function SignIn() {
   const history = useHistory();
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -28,13 +30,15 @@ function SignIn() {
   }
 
   async function handleSubmit() {
+    setLoading(true);
     await api
       .post("auth", formData)
       .then((res) => {
         localStorage.setItem("accessToken", res.data.accessToken);
         history.push("/editor");
       })
-      .catch((err) => alert(err.response.data.message));
+      .catch((err) => alert(err.response.data.message))
+      .finally(() => setLoading(false));
   }
 
   return (
@@ -64,7 +68,13 @@ function SignIn() {
               onChange={handleInputChange}
             />
           </TextfieldContainer>
-          <Button onClick={handleSubmit}>Acessar</Button>
+          <Button onClick={handleSubmit}>
+            {loading ? <i class="fas fa-spinner fa-pulse" /> : "Acessar"}
+          </Button>
+          <SignUpButton>
+            Não possuí conta?{" "}
+            <Link to="/cadastro" style={{ color: "#ffffff" }}>Cadastre-se aqui</Link>
+          </SignUpButton>
         </Form>
       </Content>
     </Container>

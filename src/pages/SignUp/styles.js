@@ -32,9 +32,10 @@ export const Title = styled.h3`
 `;
 
 export const SubTitle = styled.span`
-  color: #bbbbbb;
+  color: #ffffff;
   margin-bottom: 40px;
   font-weight: 100;
+  opacity: 0.5;
 `;
 
 export const TextfieldContainer = styled.div`

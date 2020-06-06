@@ -34,7 +34,10 @@ class Header extends Component {
             data-tip="Upload Image"
             style={{ cursor: "pointer", fontSize: 12 }}
           >
-            <i className="fal fa-lg fa-file-upload pr-2" style={{fontSize: 20, marginTop: 3}} />
+            <i
+              className="fal fa-lg fa-file-upload pr-2"
+              style={{ fontSize: 20, marginTop: 3 }}
+            />
             Nova imagem
           </div>
           <input
@@ -60,8 +63,26 @@ class Header extends Component {
                 data-placement="bottom"
                 title="Salvar imagem"
               >
-                Salvar imagem
+                Baixar imagem
                 <i className="fal fa-file-download fa-lg pl-2" />
+              </button>
+            ) : null}
+            {this.props.image ? (
+              <button
+                className="btn btn-success"
+                style={{
+                  borderRadius: "2px",
+                  border: 0,
+                  backgroundColor: "#d42f2f",
+                  fontSize: 13,
+                }}
+                onClick={this.props.setSaveToCloudImageFlag}
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Salvar imagem"
+              >
+                Salvar na nuvem
+                <i class="fal fa-cloud-upload pl-2"></i>
               </button>
             ) : null}
           </div>
@@ -74,6 +95,9 @@ class Header extends Component {
 const mapDispatchToProps = (dispatch) => ({
   handleUploadedFile: (e) => {
     dispatch({ type: "HANDLE_FILE_UPLOAD", payload: e });
+  },
+  setSaveToCloudImageFlag: () => {
+    dispatch({ type: "SET_SAVE_CLOUD_IMAGE_FLAG"});
   },
   setDownloadImageFlag: () => {
     dispatch({ type: "SET_DOWNLOAD_IMAGE_FLAG" });

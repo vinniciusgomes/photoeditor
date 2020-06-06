@@ -80,7 +80,10 @@ class WelcomeScreen extends Component {
       >
         <div className="wrapper">
           <div className="lower-wrapper">
-            <img src="./static/img/logo-white.png" style={{marginTop: -100, marginBottom: 50, width: 350}} />
+            <img
+              src="./static/img/logo-white.png"
+              style={{ marginTop: -100, marginBottom: 50, width: 350 }}
+            />
             {connectDropTarget(
               <div
                 className="drag-drop-panel"

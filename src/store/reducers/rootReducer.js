@@ -15,6 +15,7 @@ const initialState = {
   inputColor: null,
   textSize: 16,
   downloadImageFlag: false,
+  saveToCloudImageFlag: false,
   scaleValue: 100,
   showRotateSection: false,
   horizontalFlip: false,
@@ -203,6 +204,11 @@ const rootReducer = (state = initialState, action) => {
     return {
       ...state,
       downloadImageFlag: true,
+    };
+  } else if (action.type === "SET_SAVE_CLOUD_IMAGE_FLAG") {
+    return {
+      ...state,
+      saveToCloudImageFlag: true,
     };
   } else if (action.type === "SET_IMG_URL") {
     return {
