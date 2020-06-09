@@ -112,6 +112,7 @@ class WelcomeScreen extends Component {
               style={{ display: "none" }}
               onChange={(e) => this.onImageChange(e)}
               ref={(fileInput) => (this.fileInput = fileInput)}
+              accept="image/*"
             />
           </div>
         </div>
