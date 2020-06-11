@@ -58,7 +58,6 @@ Libs:
 - [Prettier](https://prettier.io/)
 - [Lottie](https://airbnb.design/lottie/)
 - [Redux](https://redux.js.org/)
-- [Redux](https://redux.js.org/)
 - [React DnD](https://react-dnd.github.io/react-dnd/)
 - [Material UI](https://material-ui.com/)
 
